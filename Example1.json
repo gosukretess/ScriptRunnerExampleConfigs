@@ -1,0 +1,135 @@
+{
+  "$schema": "./ScriptRunnerSchema.json",
+  "actions": [
+    {
+      "name": "Ping",
+      "description": "Execute ping command",
+      "command": "ping {address} -t",
+      "params": [
+        {
+          "name": "address",
+          "prompt": "text",
+          "default": "www.wp.pl"
+        }
+      ],
+      "predefinedArgumentSets": [
+        {
+          "description": "Ping Github",
+          "arguments": {
+            "address": "wwww.github.com"
+          }
+        },
+        {
+          "description": "Ping Twitter",
+          "arguments": {
+            "address": "wwww.twitter.com"
+          }
+        }
+      ]
+    },{
+      "name": "AllControlsTest",
+      "description": "Demo of all available controls",
+      "command": "pwsh.exe -NoProfile -Command Write-Host '{p1} {p2} {p3} {p4} {p5} {p6} {p7} {p8} {p9} {p10} {p11} {p12}'",
+      "params": [
+        {
+          "name": "p1",
+          "description": "Text parameter",
+          "default": "v1",
+          "prompt": "text"
+        },
+        {
+          "name": "p2",
+          "description": "Multiline Text parameter",
+          "default": "Line 1\r\n Line 2",
+          "prompt": "multilineText"
+        },
+        {
+          "name": "p3",
+          "description": "Checkbox parameter",
+          "default": "checked",
+          "prompt": "checkbox",
+          "promptSettings":{
+            "checkedValue": "checked",
+            "uncheckedValue": "unchecked"
+          }          
+        },
+        {
+          "name": "p4",
+          "description": "Date parameter",
+          "default": "2022-05-03",
+          "prompt": "datePicker",
+          "promptSettings":{
+            "format":"yyyy-MM-dd"
+          }
+        },
+        {
+          "name": "p5",
+          "description": "Year-Month parameter",
+          "default": "2022-05",
+          "prompt": "datePicker",
+          "promptSettings":{
+            "format":"yyyy-MM",
+            "dayVisible":"false"
+          }
+        },
+        {
+          "name": "p6",
+          "description": "Dropdown parameter",
+          "default": "val3",
+          "prompt": "dropdown",
+          "promptSettings":{
+            "options":"va11,val2,val3,val4"
+          }
+        },
+        {
+          "name": "p7",
+          "description": "MultiSelect parameter",
+          "default": "val3,val4",
+          "prompt": "multiSelect",
+          "promptSettings":{
+            "options":"va11,val2,val3,val4",
+            "delimiter":","
+          }
+        },
+        {
+          "name": "p8",
+          "description": "Password parameter",
+          "default": "secret",
+          "prompt": "password"
+        },
+        {
+          "name": "p9",
+          "description": "File parameter",
+          "default": "c:\\Windows\\explorer.exe",
+          "prompt": "filePicker"
+        },
+        {
+          "name": "p10",
+          "description": "Directory parameter",
+          "default": "c:\\Windows\\",
+          "prompt": "directoryPicker"
+        },
+        {
+          "name": "p11",
+          "description": "Numeric parameter",
+          "default": "7",
+          "prompt": "numeric",
+          "promptSettings": {
+            "min": "5",
+            "max": "15",
+            "step": "2"
+          }
+        },
+        {
+          "name": "p12",
+          "description": "Time parameter",
+          "default": "7:30",
+          "prompt": "timePicker",
+          "promptSettings": {
+            "format": "hh\\:mm"
+          }
+        }
+      ]
+    }
+  ]
+}
